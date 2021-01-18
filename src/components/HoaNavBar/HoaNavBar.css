@@ -1,0 +1,21 @@
+    .c-hoa-navbar {
+        color: white;
+    }
+    
+    .c-hoa-navbar a {
+        color: white;
+    }
+    
+    .c-hoa-navbar .nav-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        align-items: center;
+    }
+    
+    .c-hoa-navbar .user-container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 15%;
+    }
