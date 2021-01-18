@@ -16,7 +16,7 @@ function HoaNavBar(props) {
       } else {
         return (
             <div className="c-hoa-navbar">
-                <AppBar position="static">
+                <AppBar position="static" className="menu-container">
                 <Toolbar className="nav-container">
                     <Link href="#">
                     <Typography variant="h4">

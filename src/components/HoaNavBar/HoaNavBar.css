@@ -1,5 +1,6 @@
     .c-hoa-navbar {
         color: white;
+        background-color: green;
     }
     
     .c-hoa-navbar a {
@@ -8,13 +9,23 @@
     
     .c-hoa-navbar h3 {
         white-space: nowrap;
+        font-family: 'Raleway', sans-serif;
+    }
+    
+    .c-hoa-navbar h4 {
+        white-space: nowrap;
+        font-family: 'Raleway', sans-serif;
+    }
+    
+    .c-hoa-navbar .menu-container {
+        background-color: black;
     }
     
     .c-hoa-navbar .nav-container {
         display: flex;
         justify-content: space-between;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
         align-items: center;
     }
     
