@@ -8,35 +8,40 @@ import './HoaNavBar.css';
 
 function HoaNavBar(props) {
     const activeUser = useContext(ActiveUserContext);
-    const { onLogout } = props;
+    const { onLogout, msgNum } = props;
     const [redirectTo, setRedirectTo] = useState("");
 
     if (redirectTo) {
         return <Redirect to={redirectTo}/>
       } else {
         return (
-            <div class="c-hoa-navbar">
+            <div className="c-hoa-navbar">
                 <AppBar position="static">
-                <Toolbar class="nav-container">
+                <Toolbar className="nav-container">
                     <Link href="#">
                     <Typography variant="h4">
                     HOA Systems
                     </Typography>
                     </Link>
-                    {activeUser ? <h3>Hello {activeUser.fname} {activeUser.lname}</h3> : null}
-                    {activeUser ? null : <Link href="#/login">Login</Link>}
-                    {activeUser ? null : <Link href="#/signup">Signup</Link>}
                     {activeUser ?  
-                    <div class="user-container">
-                        <IconButton aria-label="show 4 new mails" color="inherit" onClick={() => setRedirectTo("messages")}>
-                        <Badge badgeContent={4} color="secondary">
+                    <div className="user-container">
+                        <h3>Hello {activeUser.fname} {activeUser.lname}</h3>
+                        <Avatar alt={activeUser.fname + " " + activeUser.lname} src={activeUser.img} className="user-img" />
+                        <IconButton aria-label="show new messages" color="inherit" onClick={() => setRedirectTo("messages")}>
+                        <Badge badgeContent={msgNum} color="secondary">
                         <MessageIcon fontSize="large" />
                         </Badge>
                     </IconButton>
-                        <Avatar alt="Remy Sharp" src="https://imgix.ranker.com/node_img/128/2558573/original/spongebob-squarepants-tv-characters-photo-1?fit=crop&fm=pjpg&q=60&w=144&h=144&dpr=2" />
-                        <Link href="#" onClick={() => onLogout()}>Logout</Link>
                     </div>
                     : null}
+                    {
+                    activeUser ? null : 
+                    <div className="links-container">
+                        <Link href="#/login">Login</Link> <Link href="#/signup" >Signup</Link>
+                    </div>
+                    }
+                    {activeUser ? <Link href="#" onClick={() => onLogout()}>Logout</Link> : null}
+                    
                 </Toolbar>
                 </AppBar>
             </div>

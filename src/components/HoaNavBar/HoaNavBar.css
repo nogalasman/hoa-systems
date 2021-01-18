@@ -6,10 +6,15 @@
         color: white;
     }
     
+    .c-hoa-navbar h3 {
+        white-space: nowrap;
+    }
+    
     .c-hoa-navbar .nav-container {
         display: flex;
         justify-content: space-between;
-        padding: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
         align-items: center;
     }
     
@@ -17,5 +22,17 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        width: 15%;
+        width: 25%;
+    }
+    
+    .c-hoa-navbar .links-container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 10%;
+    }
+    
+    .c-hoa-navbar .user-img {
+        width: 60px;
+        height: 60px;
     }

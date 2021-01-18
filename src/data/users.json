@@ -6,7 +6,8 @@
         "pwd": "123",
         "appartment": 1,
         "isCommitteeMember": true,
-        "communityId": 1
+        "communityId": 1,
+        "img": "https://imgix.ranker.com/node_img/128/2558573/original/spongebob-squarepants-tv-characters-photo-1?fit=crop&fm=pjpg"
     },
     {
         "id": 2,
@@ -16,7 +17,8 @@
         "pwd": "123",
         "appartment": 2,
         "isCommitteeMember": false,
-        "communityId": 1
+        "communityId": 1,
+        "img": "https://imgix.ranker.com/user_node_img/33/641410/original/bugs-bunny-people-in-tv-photo-u6?fit=crop&fm=pjpg"
     },
     {
         "id": 3,
@@ -26,7 +28,8 @@
         "pwd": "123",
         "appartment": 3,
         "isCommitteeMember": false,
-        "communityId": 1
+        "communityId": 1,
+        "img": "https://imgix.ranker.com/user_node_img/140/2782457/original/scooby-doo-photo-u9?fit=crop&fm=pjpg"
     },
     {
         "id": 4,
@@ -36,7 +39,8 @@
         "pwd": "123",
         "appartment": 4,
         "isCommitteeMember": true,
-        "communityId": 1
+        "communityId": 1,
+        "img": "https://imgix.ranker.com/node_img/473/9458716/original/tom-cat-film-characters-photo-1?fit=crop&fm=pjpg"
     },
     {
         "id": 5,
@@ -46,7 +50,8 @@
         "pwd": "123",
         "appartment": 1,
         "isCommitteeMember": true,
-        "communityId": 2
+        "communityId": 2,
+        "img": "https://imgix.ranker.com/node_img/473/9458918/original/jerry-mouse-film-characters-photo-1?fit=crop&fm=pjpg"
     },
     {
         "id": 6,
@@ -56,7 +61,8 @@
         "pwd": "123",
         "appartment": 2,
         "isCommitteeMember": false,
-        "communityId": 2
+        "communityId": 2,
+        "img": "https://imgix.ranker.com/user_node_img/41/802683/original/daffy-duck-photo-u13?fit=crop&fm=pjpg"
     },
     {
         "id": 7,
@@ -66,7 +72,8 @@
         "pwd": "123",
         "appartment": 3,
         "isCommitteeMember": false,
-        "communityId": 2
+        "communityId": 2,
+        "img": "https://imgix.ranker.com/user_node_img/79/1579031/original/mickey-mouse-photo-u16?fit=crop&fm=pjpg"
     },
     {
         "id": 8,
@@ -76,6 +83,7 @@
         "pwd": "123",
         "appartment": 4,
         "isCommitteeMember": true,
-        "communityId": 2
+        "communityId": 2,
+        "img": "https://imgix.ranker.com/user_node_img/121/2402445/original/winnie-the-pooh-books-photo-u1?fit=crop&fm=pjpg"
     }
 ]

@@ -9,6 +9,7 @@ import jsonUsers from './data/users.json';
 import jsonMessages from './data/messages.json';
 import { useState } from 'react';
 import ActiveUserContext from './shared/ActiveUserContext';
+import HoaNavBar from './components/HoaNavBar/HoaNavBar';
 
 function App() {
   const [users, setUsers] = useState(jsonUsers);        
@@ -26,12 +27,14 @@ function App() {
   const activeUserMessages = activeUser ? messages.filter(message => message.createdBy === activeUser.id) : [];
   console.log(JSON.stringify(activeUserMessages));
   console.log(JSON.stringify(activeUser));
+
   return (
     <div className="App">
       <ActiveUserContext.Provider value={activeUser}>
+      <HoaNavBar onLogout={handleLogout} msgNum={activeUserMessages.length}/>
       <HashRouter>
         <Switch>
-          <Route exact path="/"><HomePage onLogout={handleLogout}/></Route>
+          <Route exact path="/"><HomePage /></Route>
           <Route exact path="/login"><LoginPage users={users} onLogin={handleLogin}/></Route>
           <Route exact path="/signup"><SignupPage/></Route>
           <Route exact path="/messages"><MessagesPage  onLogout={handleLogout} 
