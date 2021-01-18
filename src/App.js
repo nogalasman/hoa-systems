@@ -8,6 +8,7 @@ import SignupPage from './pages/SignupPage/SignupPage';
 import jsonUsers from './data/users.json';
 import jsonMessages from './data/messages.json';
 import { useState } from 'react';
+import ActiveUserContext from './shared/ActiveUserContext';
 
 function App() {
   const [users, setUsers] = useState(jsonUsers);        
@@ -27,6 +28,7 @@ function App() {
   console.log(JSON.stringify(activeUser));
   return (
     <div className="App">
+      <ActiveUserContext.Provider value={activeUser}>
       <HashRouter>
         <Switch>
           <Route exact path="/"><HomePage onLogout={handleLogout}/></Route>
@@ -36,6 +38,7 @@ function App() {
             messages={activeUserMessages}/></Route>
         </Switch>
       </HashRouter>
+      </ActiveUserContext.Provider>
     </div>
   );
 }
