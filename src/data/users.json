@@ -1,0 +1,81 @@
+[{
+        "id": 1,
+        "fname": "Bob",
+        "lname": "Sponge",
+        "email": "bob.sponge@gmail.com",
+        "pwd": "123",
+        "appartment": 1,
+        "isCommitteeMember": true,
+        "communityId": 1
+    },
+    {
+        "id": 2,
+        "fname": "Bugs",
+        "lname": "Bunny",
+        "email": "bugs.bunny@gmail.com",
+        "pwd": "123",
+        "appartment": 2,
+        "isCommitteeMember": false,
+        "communityId": 1
+    },
+    {
+        "id": 3,
+        "fname": "Scooby",
+        "lname": "Doo",
+        "email": "scooby.doo@gmail.com",
+        "pwd": "123",
+        "appartment": 3,
+        "isCommitteeMember": false,
+        "communityId": 1
+    },
+    {
+        "id": 4,
+        "fname": "Tom",
+        "lname": "Cat",
+        "email": "tom.cat@gmail.com",
+        "pwd": "123",
+        "appartment": 4,
+        "isCommitteeMember": true,
+        "communityId": 1
+    },
+    {
+        "id": 5,
+        "fname": "Jerry",
+        "lname": "Mouse",
+        "email": "jerry.mouse@gmail.com",
+        "pwd": "123",
+        "appartment": 1,
+        "isCommitteeMember": true,
+        "communityId": 2
+    },
+    {
+        "id": 6,
+        "fname": "Daffy",
+        "lname": "Duck",
+        "email": "daffy.duck@gmail.com",
+        "pwd": "123",
+        "appartment": 2,
+        "isCommitteeMember": false,
+        "communityId": 2
+    },
+    {
+        "id": 7,
+        "fname": "Mickey",
+        "lname": "Mouse",
+        "email": "mickey.mouse@gmail.com",
+        "pwd": "123",
+        "appartment": 3,
+        "isCommitteeMember": false,
+        "communityId": 2
+    },
+    {
+        "id": 8,
+        "fname": "Winnie",
+        "lname": "ThePooh",
+        "email": "winnie.thepooh@gmail.com",
+        "pwd": "123",
+        "appartment": 4,
+        "isCommitteeMember": true,
+        "communityId": 2
+    }
+]
