@@ -1,0 +1,13 @@
+.p-login {
+    background-image: url("https://www.buildingstack.com/wp-content/uploads/2019/03/home-top-2x.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100% - 64px);
+    text-align: center;
+}
+
+.p-login .home-container {
+    background-color: white;
+    padding: 30px;
+}

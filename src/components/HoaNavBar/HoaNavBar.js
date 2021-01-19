@@ -1,7 +1,5 @@
 import { AppBar, Avatar, Badge, IconButton, Link, Toolbar, Typography } from "@material-ui/core";
 import { useContext } from "react";
-import { useState } from "react";
-import { Redirect } from "react-router-dom";
 import ActiveUserContext from "../../shared/ActiveUserContext";
 import MessageIcon from '@material-ui/icons/Message';
 import './HoaNavBar.css';
@@ -9,11 +7,7 @@ import './HoaNavBar.css';
 function HoaNavBar(props) {
     const activeUser = useContext(ActiveUserContext);
     const { onLogout, msgNum } = props;
-    const [redirectTo, setRedirectTo] = useState("");
 
-    if (redirectTo) {
-        return <Redirect to={redirectTo}/>
-      } else {
         return (
             <div className="c-hoa-navbar">
                 <AppBar position="static" className="menu-container">
@@ -27,12 +21,15 @@ function HoaNavBar(props) {
                     <div className="user-container">
                         <h3>Hello {activeUser.fname} {activeUser.lname}</h3>
                         <Avatar alt={activeUser.fname + " " + activeUser.lname} src={activeUser.img} className="user-img" />
-                        <IconButton aria-label="show new messages" color="inherit" onClick={() => setRedirectTo("messages")}>
+                        
+                    </div>
+                    : null}
+                    {activeUser ?  
+                    <Link href="#/messages" ><IconButton aria-label="show new messages" color="inherit">
                         <Badge badgeContent={msgNum} color="secondary">
                         <MessageIcon fontSize="large" />
                         </Badge>
-                    </IconButton>
-                    </div>
+                    </IconButton></Link>
                     : null}
                     {
                     activeUser ? null : 
@@ -40,13 +37,12 @@ function HoaNavBar(props) {
                         <Link href="#/login">Login</Link> <Link href="#/signup" >Signup</Link>
                     </div>
                     }
-                    {activeUser ? <Link href="#" onClick={() => onLogout()}>Logout</Link> : null}
+                    {activeUser ? <Link href="#" onClick={onLogout}>Logout</Link> : null}
                     
                 </Toolbar>
                 </AppBar>
             </div>
         )
-    }
 }
 
 export default HoaNavBar;

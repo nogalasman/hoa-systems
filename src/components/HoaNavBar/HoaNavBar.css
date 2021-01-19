@@ -27,13 +27,13 @@
         padding-left: 50px;
         padding-right: 50px;
         align-items: center;
+        flex-wrap: wrap;
     }
     
     .c-hoa-navbar .user-container {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        width: 25%;
     }
     
     .c-hoa-navbar .links-container {
@@ -46,4 +46,5 @@
     .c-hoa-navbar .user-img {
         width: 60px;
         height: 60px;
+        margin-left: 10px;
     }

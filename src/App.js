@@ -1,5 +1,5 @@
 
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
 import HomePage from './pages/HomePage/HomePage';
 import LoginPage from './pages/LoginPage/LoginPage';
@@ -31,14 +31,13 @@ function App() {
   return (
     <div className="App">
       <ActiveUserContext.Provider value={activeUser}>
-      <HoaNavBar onLogout={handleLogout} msgNum={activeUserMessages.length}/>
+      <HoaNavBar onLogout={handleLogout} msgNum={activeUserMessages.length} onRedirect={(redirectTo) => handleRedirect(redirectTo)}/>
       <HashRouter>
         <Switch>
           <Route exact path="/"><HomePage /></Route>
           <Route exact path="/login"><LoginPage users={users} onLogin={handleLogin}/></Route>
           <Route exact path="/signup"><SignupPage/></Route>
-          <Route exact path="/messages"><MessagesPage  onLogout={handleLogout} 
-            messages={activeUserMessages}/></Route>
+          <Route exact path="/messages"><MessagesPage messages={activeUserMessages}/></Route>
         </Switch>
       </HashRouter>
       </ActiveUserContext.Provider>
