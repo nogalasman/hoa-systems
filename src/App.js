@@ -10,7 +10,7 @@ import jsonMessages from './data/messages.json';
 import { useState } from 'react';
 import ActiveUserContext from './shared/ActiveUserContext';
 import HoaNavBar from './components/HoaNavBar/HoaNavBar';
-import MessagesPage2 from './pages/MessagesPage/MessagesPage2';
+import MessagesPage2 from './pages/MessagesPage/MessagesPage';
 
 function App() {
   const [users, setUsers] = useState(jsonUsers);        
