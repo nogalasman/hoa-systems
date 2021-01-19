@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <ActiveUserContext.Provider value={activeUser}>
-      <HoaNavBar onLogout={handleLogout} msgNum={activeUserMessages.length} onRedirect={(redirectTo) => handleRedirect(redirectTo)}/>
+      <HoaNavBar onLogout={handleLogout} msgNum={activeUserMessages.length}/>
       <HashRouter>
         <Switch>
           <Route exact path="/"><HomePage /></Route>
