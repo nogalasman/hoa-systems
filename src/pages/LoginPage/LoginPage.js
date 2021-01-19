@@ -60,7 +60,7 @@ function LoginPage(props) {
                         type="button"
                         fullWidth
                         variant="contained"
-                        color="primary" block onClick={login}
+                        color="primary" onClick={login}
                     >
                         Log In
       </Button>

@@ -2,15 +2,15 @@
         "id": 1,
         "createdBy": 1,
         "createAt": "2020-04-29",
-        "title": "this is my first message",
-        "details": "message content",
+        "title": "bob first message",
+        "details": "happy happy joy joy",
         "priority": 1
     },
     {
         "id": 2,
         "createdBy": 1,
         "createAt": "2020-04-26",
-        "title": "this is my second message",
+        "title": "bob second message",
         "details": "message content",
         "priority": 1
     },
@@ -18,8 +18,32 @@
         "id": 3,
         "createdBy": 1,
         "createAt": "2020-04-20",
-        "title": "this is my third message",
-        "details": "message content",
+        "title": "bob third message",
+        "details": "walla!!",
+        "priority": 2
+    },
+    {
+        "id": 4,
+        "createdBy": 2,
+        "createAt": "2002-04-29",
+        "title": "bugs first message",
+        "details": "shalom!",
+        "priority": 1
+    },
+    {
+        "id": 5,
+        "createdBy": 2,
+        "createAt": "2002-04-26",
+        "title": "bugs second message",
+        "details": "whats up falks?",
+        "priority": 1
+    },
+    {
+        "id": 6,
+        "createdBy": 2,
+        "createAt": "2002-04-20",
+        "title": "bugs third message",
+        "details": "wow!!!",
         "priority": 2
     }
 ]

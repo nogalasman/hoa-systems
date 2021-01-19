@@ -10,6 +10,7 @@ import jsonMessages from './data/messages.json';
 import { useState } from 'react';
 import ActiveUserContext from './shared/ActiveUserContext';
 import HoaNavBar from './components/HoaNavBar/HoaNavBar';
+import MessagesPage2 from './pages/MessagesPage/MessagesPage2';
 
 function App() {
   const [users, setUsers] = useState(jsonUsers);        
@@ -37,7 +38,7 @@ function App() {
           <Route exact path="/"><HomePage /></Route>
           <Route exact path="/login"><LoginPage users={users} onLogin={handleLogin}/></Route>
           <Route exact path="/signup"><SignupPage/></Route>
-          <Route exact path="/messages"><MessagesPage messages={activeUserMessages}/></Route>
+          <Route exact path="/messages"><MessagesPage2 messages={activeUserMessages}/></Route>
         </Switch>
       </HashRouter>
       </ActiveUserContext.Provider>
