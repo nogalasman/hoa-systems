@@ -6,7 +6,6 @@ function MessageDetailsCard(props) {
 
     return (
         <div className="c-message-details-card">
-        <Box my={4}>
         <Card className="card">
           <CardActionArea className="area"> 
             <CardMedia
@@ -26,7 +25,6 @@ function MessageDetailsCard(props) {
             </CardContent>
           </CardActionArea>
         </Card>
-      </Box>
       </div>
     );
 }

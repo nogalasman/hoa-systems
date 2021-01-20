@@ -9,6 +9,8 @@
     margin-bottom: -1px;
     border-bottom: 1px solid #0e4671;
     text-align: left;
+    display: flex;
+    align-items: center;
 }
 
 .c-message-card .title::after {
@@ -50,7 +52,7 @@
 }
 
 .c-message-card .content.is-expanded {
-    max-height: 500px;
+    max-height: 100%;
     overflow: hidden;
 }
 
@@ -63,4 +65,23 @@
     height: 10px;
     display: block;
     content: '';
+}
+
+.c-message-card .message-card-content {
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 100%; */
+}
+
+.c-message-card .content-item {
+    flex-grow: 1;
+}
+
+.c-message-card .red-color {
+    color: red;
+}
+
+.c-message-card .title-icon {
+    padding-right: 10px;
+    position: block;
 }

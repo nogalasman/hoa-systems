@@ -1,15 +1,15 @@
-.p-messages2 {
+.p-messages {
     min-height: 100%;
     padding: 30px;
     text-align: center;
 }
 
-.p-messages2 h1 {
+.p-messages h1 {
     text-align: center;
     color: #1569a8;
 }
 
-.p-messages2 .btn {
+.p-messages .btn {
     display: inline-block;
     margin-bottom: 20px;
     border: 1px solid #1569a8;
@@ -23,13 +23,13 @@
     outline: none;
 }
 
-.p-messages2 .btn :hover {
+.p-messages .btn :hover {
     background: #1569a8;
     color: white;
     transition: .5s;
 }
 
-.p-messages2 .accordion {
+.p-messages .accordion {
     margin: 0 auto;
     width: 100%;
 }

@@ -1,20 +1,21 @@
 
-import { HashRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import HomePage from './pages/HomePage/HomePage';
 import LoginPage from './pages/LoginPage/LoginPage';
-import MessagesPage from './pages/MessagesPage/MessagesPage';
 import SignupPage from './pages/SignupPage/SignupPage';
 import jsonUsers from './data/users.json';
 import jsonMessages from './data/messages.json';
+import jsonComments from './data/comments.json';
 import { useState } from 'react';
 import ActiveUserContext from './shared/ActiveUserContext';
 import HoaNavBar from './components/HoaNavBar/HoaNavBar';
-import MessagesPage2 from './pages/MessagesPage/MessagesPage';
+import MessagesPage from './pages/MessagesPage/MessagesPage';
 
 function App() {
   const [users, setUsers] = useState(jsonUsers);        
-  const [messages, setMessages] = useState(jsonMessages);  
+  const [messages, setMessages] = useState(jsonMessages); 
+  const [comments, setComments] = useState(jsonComments);         
   const [activeUser, setActiveUser] = useState(jsonUsers[0]); 
 
   function handleLogout() {
@@ -38,7 +39,7 @@ function App() {
           <Route exact path="/"><HomePage /></Route>
           <Route exact path="/login"><LoginPage users={users} onLogin={handleLogin}/></Route>
           <Route exact path="/signup"><SignupPage/></Route>
-          <Route exact path="/messages"><MessagesPage2 messages={activeUserMessages}/></Route>
+          <Route exact path="/messages"><MessagesPage messages={activeUserMessages} users={users} comments={comments}/></Route>
         </Switch>
       </HashRouter>
       </ActiveUserContext.Provider>

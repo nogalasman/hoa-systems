@@ -1,0 +1,13 @@
+.c-comments-card {
+    height: 100%;
+    text-align: left;
+}
+
+.c-comments-card .comments-card-content {
+    height: 100%;
+}
+
+.c-comments-card .comments-card-content .bold-font {
+    font-weight: bold;
+    padding-left: 16px;
+}

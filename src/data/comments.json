@@ -1,0 +1,36 @@
+[{
+        "id": 1,
+        "createdBy": 1,
+        "createdAt": "2002-04-26",
+        "text": "this is my first comment",
+        "messageId": 1
+    },
+    {
+        "id": 2,
+        "createdBy": 2,
+        "createdAt": "2002-05-26",
+        "text": "this is my second comment",
+        "messageId": 1
+    },
+    {
+        "id": 3,
+        "createdBy": 3,
+        "createdAt": "2002-06-26",
+        "text": "this is my third comment",
+        "messageId": 1
+    },
+    {
+        "id": 4,
+        "createdBy": 4,
+        "createdAt": "2002-04-26",
+        "text": "this is my first comment",
+        "messageId": 2
+    },
+    {
+        "id": 5,
+        "createdBy": 5,
+        "createdAt": "2002-05-26",
+        "text": "this is my second comment",
+        "messageId": 2
+    }
+]

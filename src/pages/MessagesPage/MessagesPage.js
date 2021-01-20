@@ -6,17 +6,17 @@ import './MessagePage.css';
 
 function MessagesPage(props) {
     const activeUser = useContext(ActiveUserContext);
-    const { messages } = props;
+    const { messages, users, comments } = props;
 
-    const messagesView = messages.map(message => <MessageCard key={message.id} message={message} ></MessageCard>);
+    const messagesView = messages.map(message => <MessageCard key={message.id} message={message} users={users} comments={comments.filter(comment => comment.messageId === message.id)}></MessageCard>);
 
     if (!activeUser) {
         return <Redirect to="/login" />
     } else {
         return (
-            <div className="p-messages2">
-                 <dl className="accordion">
-                        { messagesView }
+            <div className="p-messages">
+                <dl className="accordion">
+                    {messagesView}
                 </dl>
             </div>
         )
