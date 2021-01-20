@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/hoa-systems/static/css/main.8b7f850e.chunk.css",
+    "main.js": "/hoa-systems/static/js/main.cc04cc40.chunk.js",
+    "main.js.map": "/hoa-systems/static/js/main.cc04cc40.chunk.js.map",
+    "runtime-main.js": "/hoa-systems/static/js/runtime-main.c3e71117.js",
+    "runtime-main.js.map": "/hoa-systems/static/js/runtime-main.c3e71117.js.map",
+    "static/js/2.bc84dc08.chunk.js": "/hoa-systems/static/js/2.bc84dc08.chunk.js",
+    "static/js/2.bc84dc08.chunk.js.map": "/hoa-systems/static/js/2.bc84dc08.chunk.js.map",
+    "static/js/3.63e5a8e1.chunk.js": "/hoa-systems/static/js/3.63e5a8e1.chunk.js",
+    "static/js/3.63e5a8e1.chunk.js.map": "/hoa-systems/static/js/3.63e5a8e1.chunk.js.map",
+    "index.html": "/hoa-systems/index.html",
+    "static/css/main.8b7f850e.chunk.css.map": "/hoa-systems/static/css/main.8b7f850e.chunk.css.map",
+    "static/js/2.bc84dc08.chunk.js.LICENSE.txt": "/hoa-systems/static/js/2.bc84dc08.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c3e71117.js",
+    "static/js/2.bc84dc08.chunk.js",
+    "static/css/main.8b7f850e.chunk.css",
+    "static/js/main.cc04cc40.chunk.js"
+  ]
+}
