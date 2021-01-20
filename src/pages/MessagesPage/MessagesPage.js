@@ -6,9 +6,9 @@ import './MessagePage.css';
 
 function MessagesPage(props) {
     const activeUser = useContext(ActiveUserContext);
-    const { messages, users, comments } = props;
+    const { messages, users, comments, addComment } = props;
 
-    const messagesView = messages.map(message => <MessageCard key={message.id} message={message} users={users} comments={comments.filter(comment => comment.messageId === message.id)}></MessageCard>);
+    const messagesView = messages.map(message => <MessageCard key={message.id} message={message} users={users}  addComment={addComment} comments={comments.filter(comment => comment.messageId === message.id)}></MessageCard>);
 
     if (!activeUser) {
         return <Redirect to="/login" />

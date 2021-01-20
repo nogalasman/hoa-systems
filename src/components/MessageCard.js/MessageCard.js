@@ -6,18 +6,18 @@ import WarningIcon from '@material-ui/icons/Warning';
 import './MessageCard.css';
 
 function MessageCard(props) {
-    const { message, users, comments } = props;
+    const { message, users, comments, addComment } = props;
     const [expanded, setExpanded] = useState(false);
 
     return (
         <div className="c-message-card">
             <dt className={expanded ? 'title is-expanded' : 'title'} onClick={() => setExpanded(!expanded)}>
-                <span className="title-icon">{message.priority === 1 ? <InfoIcon/> : <span className="red-color"><WarningIcon/></span>}</span> {message.title} 
+                <span className="title-icon">{message.priority === 2 ? <InfoIcon/> : <span className="red-color"><WarningIcon/></span>}</span> {message.title} 
             </dt>
-            <dd className={expanded ? 'content is-expanded' : 'content'} onClick={() => setExpanded(!expanded)}>
+            <dd className={expanded ? 'content is-expanded' : 'content'} >
                 <div className="message-card-content">
                     <div className="content-item"><MessageDetailsCard message={message}></MessageDetailsCard></div>
-                    <div className="content-item"><Comments messageId={message.id} users={users} comments={comments}></Comments></div>
+                    <div className="content-item"><Comments messageId={message.id} users={users} comments={comments} addComment={addComment}></Comments></div>
                 </div>
             </dd>
         </div>

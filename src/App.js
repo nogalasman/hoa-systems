@@ -11,6 +11,7 @@ import { useState } from 'react';
 import ActiveUserContext from './shared/ActiveUserContext';
 import HoaNavBar from './components/HoaNavBar/HoaNavBar';
 import MessagesPage from './pages/MessagesPage/MessagesPage';
+import {getCurrentDateAsStr} from './shared/Utils';
 
 function App() {
   const [users, setUsers] = useState(jsonUsers);        
@@ -26,9 +27,19 @@ function App() {
     setActiveUser(loggedinUser);
   }
 
+  function addComment(messageId, txt) {
+    const newComment = {
+      "id": comments[comments.length - 1].id + 1,
+      "createdBy": activeUser.id,
+      "createdAt": getCurrentDateAsStr(),
+      "text": txt,
+      "messageId": messageId
+    }
+
+    setComments(comments.concat(newComment));
+  }
+
   const activeUserMessages = activeUser ? messages.filter(message => message.createdBy === activeUser.id) : [];
-  console.log(JSON.stringify(activeUserMessages));
-  console.log(JSON.stringify(activeUser));
 
   return (
     <div className="App">
@@ -39,7 +50,7 @@ function App() {
           <Route exact path="/"><HomePage /></Route>
           <Route exact path="/login"><LoginPage users={users} onLogin={handleLogin}/></Route>
           <Route exact path="/signup"><SignupPage/></Route>
-          <Route exact path="/messages"><MessagesPage messages={activeUserMessages} users={users} comments={comments}/></Route>
+          <Route exact path="/messages"><MessagesPage messages={activeUserMessages} users={users} addComment={addComment} comments={comments}/></Route>
         </Switch>
       </HashRouter>
       </ActiveUserContext.Provider>

@@ -1,5 +1,6 @@
 .c-message-details-card {
     text-align: left;
+    height: 100%;
 }
 
 .c-message-details-card .special-font {
@@ -13,17 +14,21 @@
 .c-message-details-card .card {
     /* max-width: 345px; */
     display: flex;
+    height: 100%;
+    align-items: flex-start;
 }
 
 .c-message-details-card .media {
+    margin-top: 30px;
     height: 280px;
     width: 280px;
-    background-size: auto;
+    /* background-size: auto; */
 }
 
 .c-message-details-card .area {
     display: flex;
     justify-content: left;
+    align-items: flex-start;
 }
 
 .c-message-details-card .details-content {

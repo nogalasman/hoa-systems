@@ -49,6 +49,7 @@
     margin: 0;
     opacity: 0;
     transition: .5s;
+    padding-bottom: 0;
 }
 
 .c-message-card .content.is-expanded {
