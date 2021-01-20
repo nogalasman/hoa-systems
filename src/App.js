@@ -39,18 +39,18 @@ function App() {
     setComments(comments.concat(newComment));
   }
 
-  const activeUserMessages = activeUser ? messages.filter(message => message.createdBy === activeUser.id) : [];
+  //const activeUserMessages = activeUser ? messages.filter(message => message.createdBy === activeUser.id) : [];
 
   return (
     <div className="App">
       <ActiveUserContext.Provider value={activeUser}>
-      <HoaNavBar onLogout={handleLogout} msgNum={activeUserMessages.length}/>
+      <HoaNavBar onLogout={handleLogout} msgNum={messages.length}/>
       <HashRouter>
         <Switch>
           <Route exact path="/"><HomePage /></Route>
           <Route exact path="/login"><LoginPage users={users} onLogin={handleLogin}/></Route>
           <Route exact path="/signup"><SignupPage/></Route>
-          <Route exact path="/messages"><MessagesPage messages={activeUserMessages} users={users} addComment={addComment} comments={comments}/></Route>
+          <Route exact path="/messages"><MessagesPage messages={messages} users={users} addComment={addComment} comments={comments}/></Route>
         </Switch>
       </HashRouter>
       </ActiveUserContext.Provider>

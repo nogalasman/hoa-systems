@@ -16,7 +16,7 @@ function MessageCard(props) {
             </dt>
             <dd className={expanded ? 'content is-expanded' : 'content'} >
                 <div className="message-card-content">
-                    <div className="content-item"><MessageDetailsCard message={message}></MessageDetailsCard></div>
+                    <div className="content-item"><MessageDetailsCard message={message} createdBy={users.find(u => u.id === message.createdBy)}></MessageDetailsCard></div>
                     <div className="content-item"><Comments messageId={message.id} users={users} comments={comments} addComment={addComment}></Comments></div>
                 </div>
             </dd>

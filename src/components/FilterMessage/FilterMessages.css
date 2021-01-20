@@ -1,0 +1,32 @@
+.c-filter-messages form {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.c-filter-messages .form-control {
+    min-width: 350px;
+    color: #0e4671;
+}
+
+.c-filter-messages .filter-control {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.c-filter-messages .search-icon {
+    padding-bottom: 5px;
+    padding-right: 15px;
+}
+
+.c-filter-messages .sort-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-filter-messages .sort-label {
+    padding-right: 30px;
+}
