@@ -1,3 +1,7 @@
+.c-filter-messages {
+    width: 95%;
+}
+
 .c-filter-messages form {
     display: flex;
     justify-content: space-evenly;

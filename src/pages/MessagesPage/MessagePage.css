@@ -34,3 +34,15 @@
     width: 100%;
     padding-top: 20px;
 }
+
+.p-messages .messages-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.p-messages .add-msg-img {
+    width: 50px;
+    height: 50px;
+    color: red;
+}

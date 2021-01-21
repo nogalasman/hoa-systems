@@ -27,9 +27,33 @@ function App() {
     setActiveUser(loggedinUser);
   }
 
+  function addMessage(title, details, priority, img) {
+    let maxId = 0;
+    if (comments.length > 0) {
+        maxId = Math.max(...comments.map(o => o.id));
+    }
+
+    const newMessage = {
+      "id": maxId + 1,
+      "createdBy": activeUser.id,
+      "createAt": getCurrentDateAsStr(),
+      "title": title,
+      "details": details,
+      "img": img,
+      "priority": ((priority === "alert") ? 1 : 2)
+    }
+
+    setMessages(messages.concat(newMessage));
+
+  }
+
   function addComment(messageId, txt) {
+    let maxId = 0;
+    if (comments.length > 0) {
+        maxId = Math.max(...comments.map(o => o.id));
+    }
     const newComment = {
-      "id": comments[comments.length - 1].id + 1,
+      "id": maxId + 1,
       "createdBy": activeUser.id,
       "createdAt": getCurrentDateAsStr(),
       "text": txt,
@@ -50,7 +74,8 @@ function App() {
           <Route exact path="/"><HomePage /></Route>
           <Route exact path="/login"><LoginPage users={users} onLogin={handleLogin}/></Route>
           <Route exact path="/signup"><SignupPage/></Route>
-          <Route exact path="/messages"><MessagesPage messages={messages} users={users} addComment={addComment} comments={comments}/></Route>
+          <Route exact path="/messages"><MessagesPage messages={messages} users={users} 
+                  addComment={addComment} comments={comments} addMessage={addMessage}/></Route>
         </Switch>
       </HashRouter>
       </ActiveUserContext.Provider>

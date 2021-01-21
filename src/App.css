@@ -6,7 +6,8 @@ html {
 
 .App {
     text-align: center;
-    height: calc(100vh - 50px);
+    height: calc(100% - 50px);
+    min-height: calc(100vh - 50px);
     border: 50px black solid;
     border-top: none;
 }

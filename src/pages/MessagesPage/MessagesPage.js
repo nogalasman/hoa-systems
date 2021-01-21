@@ -5,13 +5,16 @@ import FilterMessages from "../../components/FilterMessage/FilterMessages";
 import MessageCard from "../../components/MessageCard.js/MessageCard";
 import ActiveUserContext from "../../shared/ActiveUserContext";
 import './MessagePage.css';
+import PostAddIcon from '@material-ui/icons/PostAdd';
+import NewMessageModal from "../../components/NewMessageModal/NewMessageModal";
 
 function MessagesPage(props) {
     const activeUser = useContext(ActiveUserContext);
-    const { messages, users, comments, addComment } = props;
+    const { messages, users, comments, addComment, addMessage } = props;
     const [filter, setFilter] = useState("");
     const [filterPriority, setFilterPriority] = useState("");
     const [sortBy, setSortBy] = useState("date");
+    const [showModal, setShowModal] = useState(false);
 
     function filterBy(txt) {
         setFilter(txt);
@@ -59,10 +62,14 @@ function MessagesPage(props) {
     } else {
         return (
             <div className="p-messages">
-                <FilterMessages filterBy={name => filterBy(name)} filterByPriority={priority => filterByPriority(priority) } updSortBy={val => updSortBy(val)}></FilterMessages>
+                <div className="messages-container">
+                    <FilterMessages filterBy={name => filterBy(name)} filterByPriority={priority => filterByPriority(priority) } updSortBy={val => updSortBy(val)}></FilterMessages>
+                    <PostAddIcon className="add-msg-img" onClick={() => setShowModal(true)}/>
+                </div>
                 <dl className="accordion">
                     {messagesView()}
                 </dl>
+                <NewMessageModal show={showModal} handleClose={() => setShowModal(false)} addMessage={addMessage}/>
             </div>
         )
     }
