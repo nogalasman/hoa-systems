@@ -1,0 +1,28 @@
+[{
+        "id": 1,
+        "createdBy": 1,
+        "createAt": "2020-04-26",
+        "title": "New front door",
+        "details": "message content",
+        "options": ["yes", "no"],
+        "dueDate": "2021-04-26"
+    },
+    {
+        "id": 2,
+        "createdBy": 1,
+        "createAt": "2020-05-26",
+        "title": "Replace roof",
+        "details": "The roof is too old and has leaks",
+        "options": ["yes", "no"],
+        "dueDate": "2021-05-26"
+    },
+    {
+        "id": 3,
+        "createdBy": 1,
+        "createAt": "2020-05-26",
+        "title": "New chairman",
+        "details": "Fraiser has left the building, vote for a new chariman",
+        "options": ["Winnie ThePooh", "Mickey Mouse", "Daffy Duck"],
+        "dueDate": "2021-05-26"
+    }
+]

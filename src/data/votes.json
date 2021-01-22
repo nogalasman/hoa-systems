@@ -1,0 +1,61 @@
+[{
+        "id": 1,
+        "votingId": 1,
+        "votedBy": 1,
+        "vote": "yes"
+    },
+    {
+        "id": 2,
+        "votingId": 1,
+        "votedBy": 2,
+        "vote": "yes"
+    },
+    {
+        "id": 3,
+        "votingId": 1,
+        "votedBy": 3,
+        "vote": "no"
+    },
+    {
+        "id": 4,
+        "votingId": 2,
+        "votedBy": 1,
+        "vote": "yes"
+    },
+    {
+        "id": 5,
+        "votingId": 2,
+        "votedBy": 2,
+        "vote": "yes"
+    },
+    {
+        "id": 6,
+        "votingId": 2,
+        "votedBy": 3,
+        "vote": "no"
+    },
+    {
+        "id": 7,
+        "votingId": 3,
+        "votedBy": 1,
+        "vote": "Winnie ThePooh"
+    },
+    {
+        "id": 8,
+        "votingId": 3,
+        "votedBy": 2,
+        "vote": "Winnie ThePooh"
+    },
+    {
+        "id": 9,
+        "votingId": 3,
+        "votedBy": 3,
+        "vote": "Daffy Duck"
+    },
+    {
+        "id": 10,
+        "votingId": 3,
+        "votedBy": 4,
+        "vote": "Winnie ThePooh"
+    }
+]
