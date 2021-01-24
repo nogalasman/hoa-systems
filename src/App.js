@@ -7,17 +7,25 @@ import SignupPage from './pages/SignupPage/SignupPage';
 import jsonUsers from './data/users.json';
 import jsonMessages from './data/messages.json';
 import jsonComments from './data/comments.json';
+import jsonVotings from './data/votings.json';
+import jsonVotes from './data/votes.json';
 import { useState } from 'react';
 import ActiveUserContext from './shared/ActiveUserContext';
 import HoaNavBar from './components/HoaNavBar/HoaNavBar';
 import MessagesPage from './pages/MessagesPage/MessagesPage';
-import {getCurrentDateAsStr} from './shared/Utils';
+import { getCurrentDateAsStr } from './shared/Utils';
+import VotingsPage from './pages/VotingsPage/VotingsPage';
+import VotingModel from './model/VotingModel';
 
 function App() {
-  const [users, setUsers] = useState(jsonUsers);        
-  const [messages, setMessages] = useState(jsonMessages); 
-  const [comments, setComments] = useState(jsonComments);         
-  const [activeUser, setActiveUser] = useState(jsonUsers[0]); 
+  const [users, setUsers] = useState(jsonUsers);
+  const [messages, setMessages] = useState(jsonMessages);
+  const [comments, setComments] = useState(jsonComments);
+  const [votings, setVotings] = useState(jsonVotings);
+  const [calculatedVotings, setCalculatedVotings] = useState(getVotingsData());
+  const [activeUser, setActiveUser] = useState(jsonUsers[0]);
+
+
 
   function handleLogout() {
     setActiveUser(null);
@@ -30,7 +38,7 @@ function App() {
   function addMessage(title, details, priority, img) {
     let maxId = 0;
     if (comments.length > 0) {
-        maxId = Math.max(...comments.map(o => o.id));
+      maxId = Math.max(...comments.map(o => o.id));
     }
 
     const newMessage = {
@@ -50,7 +58,7 @@ function App() {
   function addComment(messageId, txt) {
     let maxId = 0;
     if (comments.length > 0) {
-        maxId = Math.max(...comments.map(o => o.id));
+      maxId = Math.max(...comments.map(o => o.id));
     }
     const newComment = {
       "id": maxId + 1,
@@ -63,23 +71,36 @@ function App() {
     setComments(comments.concat(newComment));
   }
 
-  //const activeUserMessages = activeUser ? messages.filter(message => message.createdBy === activeUser.id) : [];
+
+  function getVotingsData() {
+
+    const vdata = jsonVotings.map(plainVoting => {
+      let voting = new VotingModel(plainVoting);
+      voting.calculateVotes(jsonVotes.filter(v => v.votingId === voting.id));
+      return voting;
+    });
+    return vdata;
+  }
 
   return (
     <div className="App">
+      {calculatedVotings ? 
       <ActiveUserContext.Provider value={activeUser}>
-      <HoaNavBar onLogout={handleLogout} msgNum={messages.length}/>
-      <HashRouter>
-        <Switch>
-          <Route exact path="/"><HomePage /></Route>
-          <Route exact path="/login"><LoginPage users={users} onLogin={handleLogin}/></Route>
-          <Route exact path="/signup"><SignupPage/></Route>
-          <Route exact path="/messages"><MessagesPage messages={messages} users={users} 
-                  addComment={addComment} comments={comments} addMessage={addMessage}/></Route>
-        </Switch>
-      </HashRouter>
+        <HoaNavBar onLogout={handleLogout} msgNum={messages.length} votingsNum={votings.length} />
+        <HashRouter>
+          <Switch>
+            <Route exact path="/"><HomePage /></Route>
+            <Route exact path="/login"><LoginPage users={users} onLogin={handleLogin} /></Route>
+            <Route exact path="/signup"><SignupPage /></Route>
+            <Route exact path="/messages"><MessagesPage messages={messages} users={users}
+              addComment={addComment} comments={comments} addMessage={addMessage} /></Route>
+            <Route exact path="/votings"><VotingsPage votings={calculatedVotings} usersNum={users.length} /></Route>
+          </Switch>
+        </HashRouter>
       </ActiveUserContext.Provider>
+      : <div></div>}
     </div>
+    
   );
 }
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { Redirect } from "react-router-dom";
 import FilterMessages from "../../components/FilterMessage/FilterMessages";
-import MessageCard from "../../components/MessageCard.js/MessageCard";
+import MessageCard from "../../components/MessageCard/MessageCard";
 import ActiveUserContext from "../../shared/ActiveUserContext";
 import './MessagePage.css';
 import PostAddIcon from '@material-ui/icons/PostAdd';

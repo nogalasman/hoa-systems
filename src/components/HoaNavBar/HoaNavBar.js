@@ -2,11 +2,12 @@ import { AppBar, Avatar, Badge, IconButton, Link, Toolbar, Typography } from "@m
 import { useContext } from "react";
 import ActiveUserContext from "../../shared/ActiveUserContext";
 import MessageIcon from '@material-ui/icons/Message';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import './HoaNavBar.css';
 
 function HoaNavBar(props) {
     const activeUser = useContext(ActiveUserContext);
-    const { onLogout, msgNum } = props;
+    const { onLogout, msgNum, votingsNum } = props;
 
         return (
             <div className="c-hoa-navbar">
@@ -25,11 +26,17 @@ function HoaNavBar(props) {
                     </div>
                     : null}
                     {activeUser ?  
+                    <div>
                     <Link href="#/messages" ><IconButton aria-label="show new messages" color="inherit">
                         <Badge badgeContent={msgNum} color="secondary">
                         <MessageIcon fontSize="large" />
                         </Badge>
                     </IconButton></Link>
+                    <Link href="#/votings" ><IconButton aria-label="show votings" color="inherit">
+                    <Badge badgeContent={votingsNum} color="secondary">
+                    <ThumbUpIcon fontSize="large" />
+                    </Badge>
+                </IconButton></Link></div>
                     : null}
                     {
                     activeUser ? null : 

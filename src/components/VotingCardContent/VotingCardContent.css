@@ -1,0 +1,21 @@
+.c-voting-card-content {
+    text-align: left;
+}
+
+.c-voting-card-content .voting-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.c-voting-card-content .voting-content .voting-item {
+    flex-grow: 1;
+    width: 200px;
+}
+
+.c-voting-card-content .voting-content .voting-item .details-title {
+    padding-top: 0;
+}
+
+.c-voting-card-content .bold-font {
+    font-weight: bold;
+}

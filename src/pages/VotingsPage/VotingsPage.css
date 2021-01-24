@@ -1,0 +1,13 @@
+.p-votings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.p-votings .content-item {
+    flex-grow: 1;
+}
+
+.p-votings .content-item h1 {
+    font-family: 'Raleway', sans-serif;
+}
