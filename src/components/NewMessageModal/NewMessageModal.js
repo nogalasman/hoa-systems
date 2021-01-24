@@ -69,12 +69,12 @@ function NewMessageModal(props) {
                 open={show}
                 keepMounted
                 onClose={handleClose}
-                aria-labelledby="alert-dialog-slide-title"
-                aria-describedby="alert-dialog-slide-description"
+                aria-labelledby="message-dialog-slide-title"
+                aria-describedby="message-dialog-slide-description"
                 fullWidth={true}
                 maxWidth={'md'}
             >
-                <DialogTitle className={classes.dialog} id="alert-dialog-slide-title">Add A New Message</DialogTitle>
+                <DialogTitle className={classes.dialog} id="message-dialog-slide-title">Add A New Message</DialogTitle>
                 <DialogContent className={classes.dialog}>
                     <form className={classes.form} noValidate>
                         <FormControl className={classes.formControl}>

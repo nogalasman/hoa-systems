@@ -4,10 +4,12 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import './VotingsPage.css';
 import { TextField } from '@material-ui/core';
 import { useState } from 'react';
+import NewVotingModal from '../../components/NewVotingModal/NewVotingModal';
 
 function VotingsPage(props) {
     const { votings, usersNum } = props;
     const [filter, setFilter] = useState("");
+    const [showModal, setShowModal] = useState(false);
 
     let notActiveVotings = votings.filter(function (voting) {
         if (voting.isActiveVoting()){
@@ -21,8 +23,9 @@ function VotingsPage(props) {
         <div className="p-votings">
             <div className="content-item">
                 <h1>Active Votings</h1>
-                <div className="add-voting-container"><AddCircleOutlineIcon className="add-voting-img" /></div>
-                <VotingsCard className="content-item" votings={votings.filter(v => v.isActiveVoting())} usersNum={usersNum}></VotingsCard></div>
+                <div className="add-voting-container"><AddCircleOutlineIcon className="add-voting-img" onClick={() => setShowModal(true)}/></div>
+                <VotingsCard className="content-item" votings={votings.filter(v => v.isActiveVoting())} usersNum={usersNum}></VotingsCard></div>             
+                <NewVotingModal show={showModal} handleClose={() => setShowModal(false)} />
             <div className="content-item">
                 <h1>Voting Results</h1>
                 <div className="filter-control">
