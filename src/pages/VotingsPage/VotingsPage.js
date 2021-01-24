@@ -7,7 +7,7 @@ import { useState } from 'react';
 import NewVotingModal from '../../components/NewVotingModal/NewVotingModal';
 
 function VotingsPage(props) {
-    const { votings, usersNum } = props;
+    const { votings, usersNum, addVoting } = props;
     const [filter, setFilter] = useState("");
     const [showModal, setShowModal] = useState(false);
 
@@ -25,7 +25,7 @@ function VotingsPage(props) {
                 <h1>Active Votings</h1>
                 <div className="add-voting-container"><AddCircleOutlineIcon className="add-voting-img" onClick={() => setShowModal(true)}/></div>
                 <VotingsCard className="content-item" votings={votings.filter(v => v.isActiveVoting())} usersNum={usersNum}></VotingsCard></div>             
-                <NewVotingModal show={showModal} handleClose={() => setShowModal(false)} />
+                <NewVotingModal show={showModal} handleClose={() => setShowModal(false)} addVoting={addVoting}/>
             <div className="content-item">
                 <h1>Voting Results</h1>
                 <div className="filter-control">

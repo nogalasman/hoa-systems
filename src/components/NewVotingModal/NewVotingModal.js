@@ -1,6 +1,6 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Fab, FormControl, InputLabel, MenuItem, Select, TextField } from "@material-ui/core";
 import { useState } from 'react';
-import AddIcon from "@material-ui/icons/Add";
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 import './NewVotingModal.css';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -25,25 +25,44 @@ const useStyles = makeStyles((theme) => ({
     imgPreview: {
         width: 200,
     },
+    newOption: {
+        display: 'flex',
+        alignItems: "center"
+    },
 }));
 
 function NewVotingModal(props) {
-    const { show, handleClose } = props;
+    const { show, handleClose, addVoting } = props;
     const [title, setTitle] = useState("");
     const [details, setDetails] = useState("");
-    const [optionsList, setOptionsList] = useState([ "" ]);
+    const [endDate, setEndDate] = useState("");
+    const [optionsList, setOptionsList] = useState([""]);
 
     const classes = useStyles();
 
     function closeModal() {
         setTitle("");
         setDetails("");
+        setEndDate("");
+        setOptionsList([""]);
         handleClose();
     }
 
-    function handleAddMessage() {
+    const handleOptionsInputChange = (e, index) => {
+        const option = e.target.value;
+        const list = [...optionsList];
+        list[index] = option;
+        setOptionsList(list);
+
+    };
+
+    const handleAddOptionClick = () => {
+        setOptionsList([...optionsList, ""]);
+    };
+
+    function handleAddVoting() {
         if ((title !== "") && (details !== "")) {
-            //addMessage(title, details, priority, imgURL);
+            addVoting(title, details, optionsList, endDate);
         }
 
         closeModal();
@@ -69,13 +88,34 @@ function NewVotingModal(props) {
                         <FormControl className={classes.formControl}>
                             <TextField id="voting-details" variant="filled" multiline rows={8} label="Voting Details" value={details} onChange={e => setDetails(e.target.value)} />
                         </FormControl>
+                        {optionsList.map((x, i) => {
+                            return (
+                                <div className={classes.newOption} key={i}>
+                                    <FormControl className={classes.formControl}>
+                                        <TextField id="new-option" variant="filled" label="Voting option" value={x} onChange={e => handleOptionsInputChange(e, i)} />
+                                    </FormControl>
+                                    {optionsList.length - 1 === i && <AddCircleIcon onClick={handleAddOptionClick} />}
+                                </div>
+                            );
+                        })}
+                        <TextField
+                            id="datetime-local"
+                            label="End Date"
+                            type="datetime-local"
+                            variant="filled"
+                            defaultValue={endDate}
+                            onChange={e => setEndDate(e.target.value)}
+                            className={classes.formControl}
+                            InputLabelProps={{
+                                shrink: true,
+                            }}></TextField>
                     </form>
                 </DialogContent>
                 <DialogActions className={classes.dialog}>
                     <Button onClick={closeModal} variant="contained" color="secondary" type="button">
                         Cancel
           </Button>
-                    <Button variant="contained" color="primary" type="button">
+                    <Button onClick={handleAddVoting} variant="contained" color="primary" type="button">
                         Add Voting
           </Button>
                 </DialogActions>
