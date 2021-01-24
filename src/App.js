@@ -16,6 +16,7 @@ import MessagesPage from './pages/MessagesPage/MessagesPage';
 import { getCurrentDateAsStr, getDateAsStr } from './shared/Utils';
 import VotingsPage from './pages/VotingsPage/VotingsPage';
 import VotingModel from './model/VotingModel';
+import DashboardPage from './pages/DashboardPage/DashboardPage';
 
 function App() {
   const [users, setUsers] = useState(jsonUsers);
@@ -108,6 +109,7 @@ function App() {
               <Route exact path="/messages"><MessagesPage messages={messages} users={users}
                 addComment={addComment} comments={comments} addMessage={addMessage} /></Route>
               <Route exact path="/votings"><VotingsPage votings={calculatedVotings} usersNum={users.length} addVoting={addVoting} /></Route>
+              <Route exact path="/dashboard"><DashboardPage /></Route>
             </Switch>
           </HashRouter>
         </ActiveUserContext.Provider>
