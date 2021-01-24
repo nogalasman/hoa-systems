@@ -11,3 +11,25 @@
 .p-votings .content-item h1 {
     font-family: 'Raleway', sans-serif;
 }
+
+.p-votings .form-control {
+    min-width: 550px;
+    color: #0e4671;
+}
+
+.p-votings .filter-control {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.p-votings .add-voting-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.p-votings .add-voting-img {
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+}
