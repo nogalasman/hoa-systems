@@ -1,0 +1,14 @@
+.p-dashboard .votings {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: center;
+    flex-wrap: wrap;
+}
+
+.p-dashboard .content-item {
+    flex-grow: 1;
+}
+
+.p-dashboard h1 {
+    font-family: 'Raleway', sans-serif;
+}

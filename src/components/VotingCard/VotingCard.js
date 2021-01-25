@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import NewVoteCard from '../NewVoteCard/NewVoteCard';
 import VotingCardContent from '../VotingCardContent/VotingCardContent';
 import './VotingCard.css';
 
 function VotingCard(props){
-    const { voting, usersNum } = props;
+    const { voting, usersNum, addVote } = props;
     const [expanded, setExpanded] = useState(false);
     
     return (
@@ -13,7 +14,7 @@ function VotingCard(props){
             </dt>
             <dd className={expanded ? 'content is-expanded' : 'content'} >
                 <div className="voting-card-content">
-                    <div className="content-item"><VotingCardContent voting={voting} usersNum={usersNum}></VotingCardContent></div>
+                    <div className="content-item">{addVote ? <NewVoteCard voting={voting} addVote={addVote}></NewVoteCard> : <VotingCardContent voting={voting} usersNum={usersNum}></VotingCardContent>}</div>
                 </div>
             </dd>
         </div>

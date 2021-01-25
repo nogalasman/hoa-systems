@@ -1,33 +1,27 @@
-
-import { Redirect } from 'react-router-dom';
-import { useContext } from "react";
-import ActiveUserContext from "../../shared/ActiveUserContext";
-
 import './VotingsCard.css';
 import VotingCard from '../VotingCard/VotingCard';
+import { Alert } from '@material-ui/lab';
 
 function VotingsCard(props) {
-    const { votings, usersNum } = props;
-    const activeUser = useContext(ActiveUserContext);
+    const { votings, usersNum, addVote } = props;
 
     const votingsView = () => {
 
         const dataView = votings.map(voting =>
-            <VotingCard key={voting.id} voting={voting} usersNum={usersNum} ></VotingCard>);
+            <VotingCard key={voting.id} voting={voting} usersNum={usersNum} addVote={addVote}></VotingCard>);
+
         return dataView;
     }
 
-    if (!activeUser) {
-        return <Redirect to="/login" />
-    } else {
-        return (
-            <div className="c-votings-card">
+    return (
+        <div className="c-votings-card">
+            {(votings.length > 0) ?
                 <dl className="accordion">
                     {votingsView()}
                 </dl>
-            </div>
-        )
-    }
+                : <Alert severity="error">There are no votes</Alert>}
+        </div>
+    )
 }
 
 export default VotingsCard;

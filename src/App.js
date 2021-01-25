@@ -22,6 +22,7 @@ function App() {
   const [users, setUsers] = useState(jsonUsers);
   const [messages, setMessages] = useState(jsonMessages);
   const [comments, setComments] = useState(jsonComments);
+  const [votes, setVotes] = useState(jsonVotes);
   const [calculatedVotings, setCalculatedVotings] = useState(getVotingsData());
   const [activeUser, setActiveUser] = useState(jsonUsers[0]);
 
@@ -85,6 +86,21 @@ function App() {
     setComments(comments.concat(newComment));
   }
 
+  function addVote(votingId, option) {
+    let maxId = 0;
+    if (votes.length > 0) {
+      maxId = Math.max(...votes.map(o => o.id));
+    }
+
+    const newVote = {
+      "id": maxId + 1,
+      "votingId": votingId,
+      "votedBy": activeUser.id,
+      "vote": option
+    }
+    setVotes(votes.concat(newVote));
+  }
+
 
   function getVotingsData() {
 
@@ -109,7 +125,8 @@ function App() {
               <Route exact path="/messages"><MessagesPage messages={messages} users={users}
                 addComment={addComment} comments={comments} addMessage={addMessage} /></Route>
               <Route exact path="/votings"><VotingsPage votings={calculatedVotings} usersNum={users.length} addVoting={addVoting} /></Route>
-              <Route exact path="/dashboard"><DashboardPage /></Route>
+              <Route exact path="/dashboard"><DashboardPage messages={messages} users={users} addComment={addComment}
+                comments={comments} calculatedVotings={calculatedVotings} votes={votes} addVote={addVote} /></Route>
             </Switch>
           </HashRouter>
         </ActiveUserContext.Provider>
