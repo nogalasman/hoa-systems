@@ -30,7 +30,6 @@ class VotingModel {
     //TODO: enable multiple results (more than one result with the same number of votes)
     calculateVotes(votes) {
         const calcVotes = this.calculatedVotes;
-
         let result = this.options[0];
         let nVotes = 0;
         for (const vote of votes) {

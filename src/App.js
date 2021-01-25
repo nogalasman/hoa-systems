@@ -106,7 +106,7 @@ function App() {
 
     const vdata = jsonVotings.map(plainVoting => {
       let voting = new VotingModel(plainVoting);
-      voting.calculateVotes(jsonVotes.filter(v => v.votingId === voting.id));
+      voting.calculateVotes(votes.filter(v => v.votingId === voting.id));
       return voting;
     });
     return vdata;

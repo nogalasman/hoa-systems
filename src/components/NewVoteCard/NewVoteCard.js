@@ -36,7 +36,7 @@ function NewVoteCard(props) {
     const optionsView = () => {
 
         const dataView = voting.options.map(option =>
-            <MenuItem value={option}>{option}</MenuItem>);
+            <MenuItem key={option} value={option}>{option}</MenuItem>);
         return dataView;
     }
 

@@ -24,5 +24,23 @@
         "details": "Fraiser has left the building, vote for a new chariman",
         "options": ["Winnie ThePooh", "Mickey Mouse", "Daffy Duck"],
         "dueDate": "2020-05-26 22:00"
+    },
+    {
+        "id": 4,
+        "createdBy": 1,
+        "createAt": "2020-04-26",
+        "title": "Replace gardener",
+        "details": "Some of the tenents are not satisfied from the current gardener, Should we replace him?",
+        "options": ["yes", "no"],
+        "dueDate": "2021-05-26 22:00"
+    },
+    {
+        "id": 5,
+        "createdBy": 1,
+        "createAt": "2020-03-26",
+        "title": "No karaoke!!",
+        "details": "Mr Goldman suffers from the hte tenents karaoke and ask to forbid it. Do you agree?",
+        "options": ["yes", "no", "I am not sure"],
+        "dueDate": "2020-01-30 22:00"
     }
 ]

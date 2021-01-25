@@ -57,5 +57,41 @@
         "votingId": 3,
         "votedBy": 4,
         "vote": "Winnie ThePooh"
+    },
+    {
+        "id": 11,
+        "votingId": 4,
+        "votedBy": 5,
+        "vote": "yes"
+    },
+    {
+        "id": 12,
+        "votingId": 4,
+        "votedBy": 2,
+        "vote": "yes"
+    },
+    {
+        "id": 13,
+        "votingId": 4,
+        "votedBy": 3,
+        "vote": "no"
+    },
+    {
+        "id": 14,
+        "votingId": 5,
+        "votedBy": 1,
+        "vote": "yes"
+    },
+    {
+        "id": 15,
+        "votingId": 5,
+        "votedBy": 2,
+        "vote": "yes"
+    },
+    {
+        "id": 16,
+        "votingId": 5,
+        "votedBy": 3,
+        "vote": "no"
     }
 ]
